@@ -35,17 +35,14 @@ img {
     padding: 94px 0;
 }
 /*Класи для хедера*/
-.header-section {
+.page-header {
     border-bottom: 1px solid #EEEEEE;
 }
-.page-header {
+.page-header__container {
     display: flex;
     align-items: center;
 }
-.page-header>a {
-    padding: 24px 0 25px 0;
-}
-.main-title {
+.logo {
     font-family: 'Raleway', sans-serif;
     color: var(--bluecolor);
     text-decoration: none;
@@ -53,22 +50,20 @@ img {
     font-size: 26px;
     line-height: 1.19;
     letter-spacing: 0.03em;
+    padding: 24px 0 25px 0;
 }
-.title-textcolor {
+.logo--header {
     color: var(--maincolor);
 }
-.navigation {
-    margin: 0 0 0 93px;
-}
-.navigation-list {
+.site-nav {
     display: flex;
-    margin: 0;
+    margin: 0 0 0 93px;
     padding: 0;
 }
-.nav-item:not(:first-child) {
+.site-nav__item:not(:first-child), .contact-header__item:not(:first-child) {
     margin-left: 50px;
 }
-.navigation-link {
+.site-nav__link {
     position: relative;
     color: var(--maincolor);
     text-decoration: none;
@@ -79,7 +74,7 @@ img {
     padding: 32px 0px;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.main-page-active.navigation-link::after {
+.site-nav__item--active::after {
     position: absolute;
     bottom: 0;
     display: block;
@@ -89,13 +84,13 @@ img {
     background-color: var(--bluecolor);
     border-radius: 2px;
 }
-.navigation-link:hover,
-.navigation-link:focus,
-.navigation-contact:hover,
-.navigation-contact:focus {
+.site-nav__link:hover,
+.site-nav__link:focus,
+.contact-header__link:hover,
+.contact-header__link:focus {
     color: var(--bluecolor);
 }
-.navigation-contact {
+.contact-header__link {
     color: var(--navcontactcolor);
     text-decoration: none;
     font-weight: 500;
@@ -110,15 +105,13 @@ img {
     display: flex;
     padding: 0;
 }
-.icon-contact-header{
+.contact-header__icon {
     align-self: center;
     margin-right: 10px;
     fill: currentColor;
 }
 /*Класи для хіросекшн*/
 .hero {
-    /*background: var(--backgroundcolordark);*/
-    
     padding: 200px 0;
 }
 .overlay {
@@ -413,7 +406,7 @@ img {
     line-height: 1.71;
     letter-spacing: 0.03em;
 }
-.title-textfooter {
+.logo--footer {
     color: var(--whitecolor);
 }
 .subscription {
