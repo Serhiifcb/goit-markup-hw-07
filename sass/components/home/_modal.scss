@@ -51,11 +51,11 @@
 .modal__icon-close {
     fill: currentColor;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.modal__icon-close:hover,
-.modal__icon-close:focus {
-    fill: $accentColor;
+    &:hover,
+    &:focus {
+        fill: $accentColor;
+    }
 }
 
 .modal__title {
@@ -92,9 +92,23 @@
     padding: 12px 42px;
     outline: none;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .modal__label:hover & {
+        border-color: $accentColor;
+        cursor: pointer;
+    }
+
+    .modal__label:focus & {
+        border-color: $accentColor;
+        cursor: pointer;
+    }
+
+    &:focus-within {
+        border-color: $accentColor;
+    }
 }
 
-.modal__input.comment {
+.comment {
     height: 120px;
     padding: 12px 16px;
 }
@@ -110,10 +124,10 @@
     line-height: 1.16;
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 0.5);
-}
 
-.comment:not(:placeholder-shown) ~ .modal__input-placeholder {
-    display: none;
+    .comment:not(:placeholder-shown) ~ & {
+        display: none;
+    }
 }
 
 .modal__label-field {
@@ -127,11 +141,15 @@
     top: 50%;
     transform: translateY(-50%);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.modal__label:hover .modal__label-icon {
-    fill: $accentColor;
-    cursor: pointer;
+    .modal__label:hover & {
+        fill: $accentColor;
+        cursor: pointer;
+    }
+
+    .modal__input:focus-within + & {
+        fill: $accentColor;
+    }
 }
 
 textarea {
@@ -147,23 +165,7 @@ textarea {
     position: relative;
 }
 
-.modal__label:hover .modal__input {
-    border-color: $accentColor;
-    cursor: pointer;
-}
 
-.modal__label:focus .modal__input {
-    border-color: $accentColor;
-    cursor: pointer;
-}
-
-.modal__input:focus-within {
-    border-color: $accentColor;
-}
-
-.modal__input:focus-within + .modal__label-icon {
-    fill: $accentColor;
-}
 
 .modal__rules-label {
     display: flex;
@@ -183,12 +185,14 @@ textarea {
     margin-right: 7px;
     border-radius: 2px;
     border: 2px solid $primaryColor;
+    
+    .modal__rules-checkbox:checked + & {
+        background-color: $accentColor;
+        border-color: $accentColor;
+    }
 }
 
-.modal__rules-checkbox:checked+.modal__rules-icon {
-    background-color: $accentColor;
-    border-color: $accentColor;
-}
+
 
 .modal__rules-text {
     font-family: $primaryFontFamily;

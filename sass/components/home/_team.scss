@@ -11,6 +11,10 @@
     background-color: $lightColor;
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    &:not(:first-child) {
+        margin-left: 30px;
+    }
 }
 
 .worker__thumb {
@@ -45,11 +49,13 @@
     width: 44px;
     height: 44px;
     margin-right: 10px;
+
+    &:nth-child(4) {
+        margin-right: 0px;
+    }
 }
 
-.worker__social-link-item:nth-child(4) {
-    margin-right: 0px;
-}
+
 
 .worker__social-link {
     color: $colorSocialLink;
@@ -60,18 +66,14 @@
     justify-content: center;
     border-radius: 50%;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        background-color: $accentColor;
+        color: $lightColor;
+    }
 }
 
 .worker__social-link-icon {
     fill: currentColor;
-}
-
-.worker__social-link:hover,
-.worker__social-link:focus {
-    background-color: $accentColor;
-    color: $lightColor;
-}
-
-.worker:not(:first-child) {
-    margin-left: 30px;
 }
